@@ -36,9 +36,8 @@ public class JwtUtil {
 
     public boolean validateToken(String token, UserDetails userDetails) {
         try {
-            extractEmail(token);
-            return true;
-        } catch (Exception e) {
+            return extractEmail(token).equals(userDetails.getUsername());
+        } catch (JwtException | IllegalArgumentException e) {
             return false;
         }
     }

@@ -9,6 +9,6 @@ public class RegisterResponse {
     private Long id;
     private String username;
     private String email;
-    private String password; // optional, for validation error messages
+    private String message;
     private String token;
 }

@@ -37,7 +37,7 @@ public class AuthServiceImpl implements AuthService {
 
         if (request.getPassword() == null || request.getPassword().length() < 6) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(RegisterResponse.builder().password("Password must be at least 6 characters").build());
+                                        .body(RegisterResponse.builder().message("Password must be at least 6 characters").build());
         }
 
         if (userRepository.existsByEmail(request.getEmail())) {
